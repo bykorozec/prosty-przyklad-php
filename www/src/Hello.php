@@ -1,9 +1,9 @@
 <?php
 class Hello 
 {
-	public function say() 
-	{
-		return "Hello world";
-	}
+    public function say() 
+    {
+        return "Hello world";
+    }
 }
 ?>

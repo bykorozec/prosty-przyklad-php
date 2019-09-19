@@ -1,7 +1,6 @@
-node {
+pipeline {
     stage("sprawdz1") {
-	    dir
-		//sh 'pwd'
+	    bat 'echo %PATH%'
 	}
 	stage("sprawdz2") {
 		sh 'ls'

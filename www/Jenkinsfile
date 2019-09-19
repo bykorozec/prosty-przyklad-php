@@ -1,16 +1,19 @@
 pipeline {
-    stage("sprawdz1") {
-	    bat 'echo %PATH%'
+  agent any
+  stages {
+		stage("sprawdz1") {
+			bat 'echo %PATH%'
+		}
+		stage("sprawdz2") {
+			sh 'ls'
+		}
+		stage("composer_install") {
+			// Run `composer update` as a shell script
+			sh 'composer install'
+		}
+		stage("phpunit") {
+			// Run PHPUnit
+			sh 'vendor/bin/phpunit'
+		}
 	}
-	stage("sprawdz2") {
-		sh 'ls'
-	}
-    stage("composer_install") {
-        // Run `composer update` as a shell script
-        sh 'composer install'
-    }
-    stage("phpunit") {
-        // Run PHPUnit
-        sh 'vendor/bin/phpunit'
-    }
 }

@@ -1,9 +1,9 @@
 node {
-    stage ("sprawdz1") {
+    stage("sprawdz1") {
 	    dir
 		//sh 'pwd'
 	}
-	stage ("sprawdz2") {
+	stage("sprawdz2") {
 		sh 'ls'
 	}
     stage("composer_install") {

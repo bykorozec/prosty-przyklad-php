@@ -1,6 +1,7 @@
 node {
     stage ("sprawdz1") {
-		sh 'pwd'
+	    dir
+		//sh 'pwd'
 	}
 	stage ("sprawdz2") {
 		sh 'ls'

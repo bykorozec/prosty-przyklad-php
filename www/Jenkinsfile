@@ -7,10 +7,16 @@ pipeline {
                 bat 'dir'
             }
         }
-        stage("czy_dziala_lokalny_program_np_GCC") {
+//        stage("czy_dziala_lokalny_program_np_GCC") {
+//            steps {
+//                bat 'C:\\MinGW\\bin\\gcc --version'
+//                bat 'C:\\MinGW\\bin\\g++ --version'
+//            }
+//        }
+		stage("Wejscie do podkatalogu www") {
             steps {
-                bat 'C:\\MinGW\\bin\\gcc --version'
-                bat 'C:\\MinGW\\bin\\g++ --version'
+                bat 'cd www'
+                bat 'dir'
             }
         }
     }

@@ -4,6 +4,8 @@ pipeline {
 		stage("sprawdz1") {
 			steps {
 				bat 'echo %PATH%'
+				bat 'echo "Hello"'
+				bat 'dir'
 			}
 		}
 //		stage("sprawdz2") {

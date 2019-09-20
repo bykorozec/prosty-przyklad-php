@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage("czy_dziala_lokalny_program_np_GCC") {
 			steps {
-				bat 'C:\MinGW\bin\gcc --version'
+				bat 'C:\\MinGW\\bin\\gcc --version'
 			}
 		}
 	}

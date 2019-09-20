@@ -13,12 +13,17 @@ pipeline {
         }		
         stage("W podkatalogu www uruchomienie PHP bez autoloadera") {
             steps {
-                bat 'cd www && dir && php skrypt-bez-autoload.php'
+                bat 'cd www && php skrypt-bez-autoload.php'
             }
         }
 		stage("W podkatalogu www uruchomienie PHP z autoloaderem") {
             steps {
-                bat 'cd www && dir && php index.php'
+                bat 'cd www && php index.php'
+            }
+        }
+		stage("W podkatalogu www uruchomienie PHPUnit") {
+            steps {
+                bat 'cd www && php ./vendor/phpunit/phpunit/phpunit ./tests'
             }
         }
     }

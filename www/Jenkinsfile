@@ -1,9 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage("Composer") {
+        stage("Sprawdz_istnienie_Composera") {
             steps {
-                bat 'cd www && composer install'
+			    bat 'php C:\\xampp7_3\\php\\composer.phar --version'
+                //bat 'cd www && composer install'
             }
         }
         stage("W podkatalogu www uruchomienie PHP bez autoloadera") {

@@ -1,15 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage("sprawdz_polecenia_systemu") {
-            steps {
-                bat 'PATH'
-                bat 'dir'
-            }
-        }
         stage("Wejscie do podkatalogu www i uruchomienie PHP bez autoloadera") {
             steps {
-                bat 'cd www && dir && skrypt-bez-autoload.php'
+                bat 'cd www && dir && php skrypt-bez-autoload.php'
                 bat 'dir'
             }
         }

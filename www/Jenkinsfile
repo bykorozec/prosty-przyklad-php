@@ -1,10 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage("Wejscie do podkatalogu www i uruchomienie PHP bez autoloadera") {
+        stage("Composer") {
+            steps {
+                bat 'cd www && composer install'
+            }
+        }
+        stage("W podkatalogu www uruchomienie PHP bez autoloadera") {
             steps {
                 bat 'cd www && dir && php skrypt-bez-autoload.php'
-                bat 'dir'
             }
         }
     }

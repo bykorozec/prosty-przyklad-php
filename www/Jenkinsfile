@@ -7,15 +7,9 @@ pipeline {
                 bat 'dir'
             }
         }
-//        stage("czy_dziala_lokalny_program_np_GCC") {
-//            steps {
-//                bat 'C:\\MinGW\\bin\\gcc --version'
-//                bat 'C:\\MinGW\\bin\\g++ --version'
-//            }
-//        }
-		stage("Wejscie do podkatalogu www") {
+        stage("Wejscie do podkatalogu www i uruchomienie PHP") {
             steps {
-                bat 'cd www'
+                bat 'cd www && dir && php index.php'
                 bat 'dir'
             }
         }
